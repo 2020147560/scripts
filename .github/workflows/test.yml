@@ -3,15 +3,15 @@ name: Test
 on:
   push:
     paths:
-      - 'scripts/test/**'
-      
+      - test/**
+
 jobs:
-  check_test:
-    runs-on: ubuntu 20.04
+  test:
+    runs-on: ubuntu-20.04
     
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Check test
-        shell: bash
-        run: make -C test
+      - name: List all files in repository
+        run: |
+          ls ${{ github.workspace }}
+          make -C test
