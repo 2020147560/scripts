@@ -11,7 +11,6 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
-      - name: List all files in repository
+      - name: Check test makefile
         run: |
-          ls ${{ github.workspace }}
           make -C test
