@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  push:
+    paths:
+      - 'scripts/test/**'
+      
+jobs:
+  check_test:
+    runs-on: ubuntu 20.04
+    
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Check test
+        shell: bash
+        run: make -C test
