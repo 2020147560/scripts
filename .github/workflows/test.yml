@@ -1,0 +1,12 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    
+    steps:
+      - name: List all files in repository
+        run: |
+          ls ${{ github.workspace }}
