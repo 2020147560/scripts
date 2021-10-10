@@ -1,14 +1,6 @@
 name: Test
 
 on:
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log Level'
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'
   push:
     paths:
       - 'scripts/test/**'
@@ -23,5 +15,4 @@ jobs:
       - name: Check test
         shell: bash
         run: |
-          cd scripts
           make -C test
